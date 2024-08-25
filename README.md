@@ -4,7 +4,7 @@ This repository contains the user-side of the application, providing users with 
 
 ## Features
 
-- **User Authentication**: Users can register and log in using email or phone number authentication via Firebase.
+- **User Authentication**: Users can register and log in phone number authentication via Firebase.
 - **Real-Time Data**: Utilizes Firebase Realtime Database for dynamic content updates.
 - **Secure Payments**: Stripe integration for secure payment processing.
 - **Push Notifications**: Send real-time notifications using Firebase Cloud Messaging.
