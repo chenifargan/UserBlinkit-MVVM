@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.OrderPlaceActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tbOrderFragment"
+        android:background="@color/white_yellow"
+        app:titleTextColor="@color/black"
+        app:navigationIcon="@drawable/baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Checkout"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.3dp"
+        android:id="@+id/view"
+        android:background="#DAD4D4"
+        app:layout_constraintTop_toBottomOf="@id/tbOrderFragment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cvCartProducts"
+        app:cardCornerRadius="13dp"
+        app:cardUseCompatPadding="true"
+        android:elevation="0dp"
+        android:padding="6.5dp"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rvProductsItems"
+                android:layout_margin="13dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cvBillDetails"
+        app:cardCornerRadius="13dp"
+        app:cardUseCompatPadding="true"
+        android:elevation="0dp"
+        android:padding="6.5dp"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvCartProducts">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="13dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bill Details"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="17sp"
+                        android:layout_height="17sp"
+                        android:layout_gravity="center"
+                        android:layout_weight="0"
+                        android:src="@drawable/baseline_article_24"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sub Total"
+                        android:layout_weight="0.6"
+                        android:layout_marginStart="13dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="179"
+                        android:id="@+id/tvSubTotal"
+                        android:layout_weight="0.4"
+                        android:layout_marginEnd="13dp"
+                        android:gravity="end"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+
+                        
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="17sp"
+                        android:layout_height="17sp"
+                        android:layout_gravity="center"
+                        android:layout_weight="0"
+                        android:src="@drawable/baseline_delivery_dining_24"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Delivery Charge"
+                        android:layout_weight="0.6"
+                        android:layout_marginStart="13dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Free"
+                        android:id="@+id/tvDelivery"
+                        android:layout_weight="0.4"
+                        android:layout_marginEnd="13dp"
+                        android:gravity="end"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Final Total"
+                        android:layout_weight="0.5"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="196"
+                        android:id="@+id/tvTotal"
+                        android:textColor="@color/black"
+                        android:layout_weight="0.5"
+                        android:layout_marginEnd="13dp"
+                        android:gravity="end"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/llCart"
+        android:background="@drawable/bg_bottom_sheet"
+        android:gravity="bottom|center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="13dp"
+        android:weightSum="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/llItemCart"
+            android:layout_weight="0.5"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/stripe"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="Stripe Pay"
+                android:textSize="18sp"/>
+                
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_weight="0.5"
+            android:id="@+id/btnNext"
+            android:background="@drawable/bg_product_count"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvAdd"
+                android:padding="10dp"
+                android:text="Place Order"
+                android:gravity="center"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+            <ImageButton
+                android:layout_width="19.5dp"
+                android:layout_height="19.5dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="6dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/baseline_arrow_right_24"/>
+        </LinearLayout>
+            
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
